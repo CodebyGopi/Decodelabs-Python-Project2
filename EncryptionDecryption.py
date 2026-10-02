@@ -1,6 +1,5 @@
 def encrypt(text, shift):
     result = ""
-
     for char in text:
         if char.isalpha():
             if char.isupper():
@@ -9,19 +8,13 @@ def encrypt(text, shift):
                 result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
         else:
             result += char
-
     return result
-
-
 def decrypt(text, shift):
     return encrypt(text, -shift)
-
-
 message = input("Enter a message: ")
 shift = int(input("Enter shift value: "))
 
 encrypted = encrypt(message, shift)
 decrypted = decrypt(encrypted, shift)
-
 print("\nEncrypted Text:", encrypted)
 print("Decrypted Text:", decrypted)
